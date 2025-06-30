@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Analytics Dashboard 🍔</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            margin-top: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .section h2 {
+            color: #ff6b6b;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .tableau-embed {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .tableau-embed h2 {
+            color: #fff;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .tableau-embed p {
+            color: #fff;
+            font-size: 1.2em;
+        }
+
+        tableau-viz {
+            margin: 20px auto;
+            display: block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff6b6b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            background: #ff8e53;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .container {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            tableau-viz {
+                width: 100% !important;
+                height: 500px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Restaurant Analytics Hub 🍕</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home 🥗</a>
+        <a href="#visualizations">Visualizations 🍴</a>
+        <a href="#insights">Insights 🍷</a>
+        <a href="#contact">Contact 🍽️</a>
+    </nav>
+
+    <div class="container">
+        <div class="section" id="home">
+            <h2>Welcome to Our Restaurant Analytics Platform! 🍔</h2>
+            <p>Explore delicious data visualizations and uncover insights with our interactive Tableau dashboards. Dive into the numbers and optimize your restaurant's performance! 😋</p>
+        </div>
+
+        <div class="tableau-embed" id="visualizations">
+            <h2>Tableau Data Visualizations 🍴</h2>
+            <p>Check out our tasty analytics dashboards below, powered by Tableau Public! 🥐</p>
+            <tableau-viz id="tableauViz1" src="https://public.tableau.com/views/summaryassignment/sheet11?:language=en-US&:display_count=n&:origin=viz_share_link" width="1000px" height="800px" toolbar="bottom" hide-tabs></tableau-viz>
+            <tableau-viz id="tableauViz2" src="https://public.tableau.com/views/summaryassignment2/sheet12?:language=en-US&:display_count=n&:origin=viz_share_link" width="1000px" height="800px" toolbar="bottom" hide-tabs></tableau-viz>
+            <tableau-viz id="tableauViz3" src="https://public.tableau.com/views/summaryassignment3/sheet13?:language=en-US&:display_count=n&:origin=viz_share_link" width="1000px" height="800px" toolbar="bottom" hide-tabs></tableau-viz>
+            <a href="https://public.tableau.com/views" class="cta-button">Explore More Dashboards 🥮</a>
+        </div>
+
+        <div class="section" id="insights">
+            <h2>Key Insights 🍷</h2>
+            <p>Our analytics serve up trends, patterns, and opportunities to grow your restaurant business. Stay tuned for more flavorful updates! 🍲</p>
+        </div>
+
+        <div class="section" id="contact">
+            <h2>Contact Us 🍽️</h2>
+            <p>Have questions or need custom analytics for your restaurant? Reach out to us! 😋</p>
+            <a href="mailto:info@restaurantanalytics.com" class="cta-button">Get in Touch 🍴</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Restaurant Analytics Hub. All rights reserved. Cooked with 🍳</p>
+    </footer>
+
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Add animation to buttons on hover
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseover', () => {
+                button.style.transform = 'scale(1.1)';
+            });
+            button.addEventListener('mouseout', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
